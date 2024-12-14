@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: apercu-m;
+    src: url(./assets/apercu-medium.woff2);
+}
+@font-face {
+    font-family: siaga;
+    src: url(./assets/Siaga-Bold.woff2);
+}
+@font-face {
+    font-family: apercu;
+    src: url(./assets/apercu-regular.woff2);
+}
