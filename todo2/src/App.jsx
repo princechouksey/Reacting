@@ -7,14 +7,19 @@ const App = () => {
   const [imageUrl, setimageUrl] = useState(""); 
   const [allCards, setallCards] = useState([]); 
   
-
+const deleteHandler = (i) =>{
+ 
+  const copyUsers = [...allCards];
+  copyUsers.splice(i,1);
+  setallCards(copyUsers)
+ 
+}
 
 
   
   const submitHandler =(e) =>{
     e.preventDefault()
     const newArr = [...allCards, {name, details, imageUrl}]
-    console.log(newArr)
     setallCards(newArr)
     setname("")
     setDetails("")
@@ -35,11 +40,12 @@ const App = () => {
         <button className='px-3 py-1 bg-black text-white rounded font-sm '>Submit</button>
       </form>
       <div className='h-[50vh] w-full mt-32 px-5 flex items-center justify-start gap-12 '>
-        {allCards.map(function(elem){
-          return <div className='w-[20vw] h-[45vh] px-5  border border-zinc-300 rounded  flex items-center justify-start flex-col    '>
+        {allCards.map(function(elem, i){
+          return <div  key={i}  className='w-[20vw] h-[45vh] px-5  border border-zinc-300 rounded  flex items-center justify-start flex-col    '>
               <img src={elem.imageUrl} className=' w-32 h-32 object-cover rounded-full mt-5  ' alt="" />
              <h1 className=' font-semibold text-2xl mb-4 mt-3  '>{elem.name}</h1>
              <h1 className='w-full text-xl mt-2  '>{elem.details}</h1>
+             <button onClick={()=>{deleteHandler(i)}} className='bg-red-500 text-white px-3 py-1 rounded  mt-5'>Delete</button>
            
 
                 </div>
