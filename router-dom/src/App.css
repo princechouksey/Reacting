@@ -6,6 +6,7 @@ box-sizing: border-box;
 html,body {
 height: 100%;
 width: 100%;
+background-color: #000;
 }
 h1{
   font-size: 100px;
@@ -13,10 +14,12 @@ h1{
   top: 50vh;
   left: 50vw;
   transform: translate(-50%,-50%);
+  text-align: center;
+  color: white;
 }
 nav{
   padding: 20px 30px;
- 
+  background-color: red;
   display: flex;
   align-items: center ;
   justify-content: space-between;
@@ -27,4 +30,17 @@ nav div{
   display: flex;
   gap: 20px;
   align-items: center;
+ 
+}
+ nav h2{
+  color: #fff;
+}
+h3{
+  font-size: 100px;
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%,-50%);
+  text-align: center;
+  color: red;
 }
